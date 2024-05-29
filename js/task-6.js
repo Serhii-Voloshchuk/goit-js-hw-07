@@ -3,3 +3,83 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
+
+
+const input = document.querySelector('input[type="number"]');
+const dataCreateBtn = document.querySelector('button[data-create]');
+const dataDestroyBtn = document.querySelector('button[data-destroy]');
+const boxesContainer = document.querySelector('#boxes');
+
+dataCreateBtn.addEventListener('click', event =>{
+  const amount = input.value;
+
+  if(amount >=1 && amount <= 100){
+
+    createBoxes(amount);
+  };
+});
+
+boxesContainer.style.marginTop = '20px';
+boxesContainer.style.display = 'flex';
+boxesContainer.style.columnGap = '20px'; 
+
+function createBoxes(amount){
+
+  
+
+  for (let i = 0; i < amount; i +=1) {
+    const box = document.createElement('div');
+    const size = 30 + i * 10;
+
+    boxesContainer.appendChild(box);
+
+    box.style.width =`${size}px`;
+    box.style.height =`${size}px`;
+    box.style.backgroundColor = getRandomHexColor();
+   
+  };
+
+  dataDestroyBtn.addEventListener('click', event =>{
+    boxesContainer.innerHTML = '';
+  })
+
+}
+
+
+
+
+
+// const createBtn = document.querySelector('button[data-create]');
+// const input = document.querySelector('input[type="number"]');
+
+// createBtn.addEventListener('click', () => {
+//   const amount = input.value;
+
+//   if (amount >= 1 && amount <= 100) {
+//     createBoxes(amount);
+//   };
+// });
+
+// function createBoxes(amount) {
+//   const boxesContainer = document.getElementById('boxes');
+
+//   for (let i = 0; i < amount; i++) {
+//     const box = document.createElement('div');
+//     const size = 30 + i * 10; 
+
+//     box.style.width = `${size}px`;
+//     box.style.height = `${size}px`;
+//     box.style.backgroundColor = getRandomHexColor(); 
+//     box.style.marginBottom = '10px'; 
+
+//     boxesContainer.appendChild(box);
+//   }
+// }
+
+
+// const destroyBtn = document.querySelector('button[data-destroy]');
+
+// destroyBtn.addEventListener('click', () => {
+//   const boxesContainer = document.getElementById('boxes');
+//   boxesContainer.innerHTML = ''; 
+// });
