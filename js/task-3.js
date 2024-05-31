@@ -1,14 +1,12 @@
-const inputLogin = document.querySelector('span#name-input');
+const inputLogin = document.querySelector('input#name-input'); // исправленно обращение к input
 
 
-const trimmedValues = (event) => {
+const trimmedValues = () => {
     const inputValueTrimmed = inputLogin.value.trim();
     const outputLogin = document.querySelector('span#name-output');
-    outputLogin.textContent = inputValueTrimmed;
+    outputLogin.textContent = inputValueTrimmed || 'Anonymous'; // перенастроена логика
 
-    if (!inputValueTrimmed) {
-        outputLogin.textContent = 'Anonymous';
-    }
+   
 }
 inputLogin.addEventListener('input', trimmedValues);
 
