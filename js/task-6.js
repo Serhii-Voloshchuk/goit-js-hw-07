@@ -45,6 +45,6 @@ function createBoxes(amount){
 
 dataDestroyBtn.addEventListener('click', () =>{
   boxesContainer.innerHTML = '';
-})
+});
 
 
