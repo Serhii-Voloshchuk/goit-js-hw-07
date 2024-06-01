@@ -7,10 +7,8 @@ event.preventDefault();
 const forms = event.currentTarget.elements;
 
 
-const inputMailTrimmed = formElements.email.value.trim();
-const inputPasswordTrimmed = formElements.password.value.trim();
-
-
+const inputMailTrimmed = forms.email.value.trim();
+const inputPasswordTrimmed = forms.password.value.trim();
 
 if(!inputMailTrimmed || !inputPasswordTrimmed){
     alert ('All form fields must be filled in');
