@@ -23,7 +23,7 @@ const formsValues = {
 
 console.log(formsValues);
 
-forms.reset();
+event.currentTarget.reset();
 
 
 });
